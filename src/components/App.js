@@ -17,19 +17,22 @@ const Layout = styled.div`
 
 const App = () => {
   return(
-    <Router history={history}>
-      <Switch>
-        <Route path="/">
-          <Layout>
-            <Sidebar />
-            <ProjectsTab />
-            <Navbar />
-            <ContentArea />
-          </Layout>
-        </Route>
-      </Switch>
-    </Router>
+    <Layout>
+      <Router history={history}>
+        <Sidebar />
+        <ProjectsTab />
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <ContentArea example="hello" />
+          </Route>
 
+          <Route path="/statistics">
+            <ContentArea example="statistics" />
+          </Route>
+        </Switch>
+      </Router>
+    </Layout>
   );
 };
 

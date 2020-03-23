@@ -1,12 +1,30 @@
 import React from 'react';
+
 import {
-  SidebarBackground
+  Link
+} from "react-router-dom";
+
+import {
+  SidebarBackground,
+  SidebarButton,
+  HomeIcon,
+  StatsIcon
 } from './styles';
 
 const Sidebar = () => {
   return(
     <SidebarBackground>
-      Sidebar
+      <Link to="/">
+        <SidebarButton>
+          <HomeIcon />
+        </SidebarButton>
+      </Link>
+
+      <Link to="/statistics">
+        <SidebarButton>
+          <StatsIcon />
+        </SidebarButton>        
+      </Link>
     </SidebarBackground>
   );
 };

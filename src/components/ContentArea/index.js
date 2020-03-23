@@ -3,10 +3,10 @@ import {
   ContentBackground
 } from './styles';
 
-const ContentArea = () => {
+const ContentArea = props => {
   return(
     <ContentBackground>
-      Content
+      { props.example }
     </ContentBackground>
   );
 };
