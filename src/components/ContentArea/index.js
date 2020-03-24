@@ -1,9 +1,12 @@
 import React from 'react';
 import {
   Container,
-  ContentBackground
+  ContentBackground,
+  ProjectArea
 } from './styles';
 import ProjectsTab from '../ProjectsTab/';
+import Posts from '../Posts/';
+import CalendarView from '../CalendarView/';
 
 const ContentArea = props => {
   console.log(props);
@@ -12,7 +15,10 @@ const ContentArea = props => {
       <ProjectsTab />
       <Container>
         <ContentBackground>
-          { props.example }
+          <ProjectArea>
+            <Posts />
+            <CalendarView />
+          </ProjectArea>
         </ContentBackground>
       </Container>
     </React.Fragment>

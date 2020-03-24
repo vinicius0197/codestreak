@@ -14,3 +14,9 @@ export const ContentBackground = styled.div`
   height: 100%;
   overflow-y: scroll;
 `;
+
+export const ProjectArea = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
