@@ -1,11 +1,10 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import styled from 'styled-components';
 import './App.css';
 import Sidebar from './Sidebar/';
 import Navbar from './Navbar/';
-import ProjectsTab from './ProjectsTab/';
 import ContentArea from './ContentArea';
 
 import history from '../history';
@@ -20,16 +19,11 @@ const App = () => {
     <Layout>
       <Router history={history}>
         <Sidebar />
-        <ProjectsTab />
         <Navbar />
         <Switch>
-          <Route exact path="/">
-            <ContentArea example="hello" />
-          </Route>
-
-          <Route path="/statistics">
-            <ContentArea example="statistics" />
-          </Route>
+          <Redirect exact from="/" to="/home" />
+          <Route path="/home" component={ContentArea} />
+          <Route path="/statistics" component={ContentArea} />
         </Switch>
       </Router>
     </Layout>

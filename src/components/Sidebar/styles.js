@@ -14,7 +14,7 @@ export const SidebarBackground = styled.aside`
   padding-top: 30px;
 `;
 
-export const SidebarButton = styled.div`
+export const SidebarButton = styled.button`
   width: 44px;
   height: 44px;
   padding: 11px;

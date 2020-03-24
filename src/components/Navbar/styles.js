@@ -8,4 +8,5 @@ export const Nav = styled.nav`
   justify-content: space-between;
   left: 6.5rem;
   height: 5rem;
+  z-index: 10;
 `;
