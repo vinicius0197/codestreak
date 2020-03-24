@@ -6,7 +6,7 @@ import {
 
 const Searchbar = () => {
   return(
-    <SearchbarInput />
+    <SearchbarInput placeholder="Search" />
   );
 };
 
