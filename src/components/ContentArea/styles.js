@@ -10,6 +10,7 @@ export const ContentBackground = styled.div`
   background-color: #F5F7F9;
   border-radius: 7px;
   margin-top: 6rem;
+  padding-bottom: 6rem;
   margin-bottom: -6rem;
   height: 100%;
   overflow-y: scroll;

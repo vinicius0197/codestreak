@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const ProjectsBackground = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   margin-top: 6rem;
   min-width: 15rem;
 `;
@@ -52,5 +53,33 @@ export const ProjectItem = styled.div`
 
   ${ProjectItemContainer}:hover & {
     color: #1F6FF8;
+  }
+`;
+
+export const NewProjectButton = styled.button`
+  margin-left: 68px;
+  margin-bottom: 40px;
+  width: 105px;
+  height: 147px;
+  background: #F3F5FE;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 22px;
+  cursor: pointer;
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 0.015em;
+
+  color: #1F6FF8;
+
+  transition-duration: 0.25s;
+
+  &:hover {
+    margin-bottom: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
   }
 `;

@@ -14,4 +14,10 @@ export const SearchbarInput = styled.input`
   font-size: 12px;
   line-height: 16px;
   color: #2F2F2F;
+
+  transition-duration: 0.25s;
+
+  &:hover {
+    width: 20rem;
+  }
 `;
