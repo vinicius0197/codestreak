@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { fetchProjects } from 'actions';
 
 import { Link, useRouteMatch } from "react-router-dom";
 
@@ -10,32 +12,48 @@ import {
   NewProjectButton
 } from './styles';
 
-const ProjectsTab = ({ match }) => {
-  let { path, url } = useRouteMatch();
+const ProjectsTab = props => {
+  let { url } = useRouteMatch();
+
+  useEffect(() => {
+    props.fetchProjects();
+  }, []);
+
+  const renderProjects = () => {
+    if(props.projects.projects.length > 0) {
+      return(
+        props.projects.projects.map(project => {
+          return(
+            <Link key={project.projectName} to={`${url}/projeto1`}>
+            <ProjectItemContainer>
+              <ProjectBullet />
+              <ProjectItem data-testid="project-item">{project.projectName}</ProjectItem>
+            </ProjectItemContainer>
+          </Link>
+          );
+        })
+      );
+    } else {
+      return <div>Loading ...</div>;
+    }
+  };
   return(
     <ProjectsBackground>
-      <div>
-        <Link to={`${url}/projeto1`}>
-          <ProjectItemContainer>
-            <ProjectBullet />
-            <ProjectItem>Projeto 1</ProjectItem>
-          </ProjectItemContainer>
-        </Link>
-
-        <ProjectItemContainer>
-          <ProjectBullet />
-          <ProjectItem>Projeto 2</ProjectItem>
-        </ProjectItemContainer>
-
-        <ProjectItemContainer>
-          <ProjectBullet />
-          <ProjectItem>Projeto 3</ProjectItem>
-        </ProjectItemContainer>
+      <div data-testid="projectList">
+        { renderProjects() }
       </div>
 
-      <NewProjectButton> New Project </NewProjectButton>
+      <Link to={'/home/newproject'}>
+        <NewProjectButton data-testid="createProjectButton"> New Project </NewProjectButton>
+      </Link>
     </ProjectsBackground>
   );
 };
 
-export default ProjectsTab;
+const mapStateToProps = state => {
+  return {
+    projects: state.projects
+  }
+};
+
+export default connect(mapStateToProps, { fetchProjects })(ProjectsTab);

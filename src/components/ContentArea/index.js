@@ -4,12 +4,14 @@ import {
   ContentBackground,
   ProjectArea
 } from './styles';
-import ProjectsTab from '../ProjectsTab/';
-import Posts from '../Posts/';
-import CalendarView from '../CalendarView/';
+import ProjectsTab from 'components/ProjectsTab';
+import Posts from 'components/Posts';
+import CalendarView from 'components/CalendarView';
+import CreateProject from 'components/CreateProject';
+
+import {Route} from 'react-router-dom';
 
 const ContentArea = props => {
-  console.log(props);
   return(
     <React.Fragment>
       <ProjectsTab />
@@ -21,6 +23,7 @@ const ContentArea = props => {
           </ProjectArea>
         </ContentBackground>
       </Container>
+      <Route path="/home/newproject" exact component={CreateProject} />
     </React.Fragment>
   );
 };

@@ -2,10 +2,10 @@ import React from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import styled from 'styled-components';
-import './App.css';
-import Sidebar from './Sidebar/';
-import Navbar from './Navbar/';
-import ContentArea from './ContentArea';
+import 'components/App.css';
+import Sidebar from 'components/Sidebar';
+import Navbar from 'components/Navbar';
+import ContentArea from 'components/ContentArea';
 
 import history from '../history';
 
