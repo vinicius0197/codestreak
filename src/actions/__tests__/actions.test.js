@@ -1,13 +1,27 @@
 import mockAxios from 'axios';
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import { FETCH_PROJECTS } from 'actions/types';
+
 import { fetchProjects } from 'actions/index';
 
-it('fetches projects from api', async () => {
-  // mockAxios.get.mockResolvedValueOnce({ data:
-  //   [{ projectName: 'project 1' }, { projectName: 'project 2' }]
-  // });
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 
-  // const response = await fetchProjects();
+describe('Action Creators', () => {
+  it('fetches projects list from api', () => {
+    mockAxios.get.mockResolvedValueOnce({ data:
+      [{ projectName: 'project 1' }, { projectName: 'project 2' }]
+    });
 
-  // expect(response.payload.length).toEqual(2);
-  // expect(mockAxios.get).toHaveBeenCalledTimes(1);
+    const expectedActions = [
+      { type: FETCH_PROJECTS, payload: [{ projectName: 'project 1' }, { projectName: 'project 2' }] }
+    ];
+
+    const store = mockStore({ projects: [] });
+
+    return store.dispatch(fetchProjects()).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
 });

@@ -35,6 +35,7 @@ describe('<ProjectsTab> ', () => {
 
       const resolvedProjects = await findAllByTestId('project-item');
       expect(resolvedProjects).toHaveLength(2);
+      expect(mockAxios.get).toHaveBeenCalledWith('http:localhost:3001/projects');
     });
   });
 });
