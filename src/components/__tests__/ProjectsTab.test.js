@@ -1,5 +1,5 @@
 import React from 'react';
-import mockAxios from 'axios';
+import mockAxios from 'apis';
 import { Router } from 'react-router-dom';
 import {
   render,
@@ -35,7 +35,7 @@ describe('<ProjectsTab> ', () => {
 
       const resolvedProjects = await findAllByTestId('project-item');
       expect(resolvedProjects).toHaveLength(2);
-      expect(mockAxios.get).toHaveBeenCalledWith('http:localhost:3001/projects');
+      expect(mockAxios.get).toHaveBeenCalledWith('/projects');
     });
   });
 });

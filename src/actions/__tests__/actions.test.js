@@ -1,4 +1,4 @@
-import mockAxios from 'axios';
+import mockAxios from 'apis';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { FETCH_PROJECTS } from 'actions/types';
