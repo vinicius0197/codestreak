@@ -1,25 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import Modal from '../shared/Modal';
+import ProjectForm from 'components/CreateProject/ProjectForm';
+import { addProject } from 'actions';
 
-import { Link } from 'react-router-dom';
 
-const CreateProject = () => {
+const CreateProject = props => {
+  const onSubmit = formValues => {
+    props.addProject(formValues);
+  };
+
   return(
     <Modal modalName="Create Project">
       <div>Create new project</div>
-
-      <label for="projectName">Project Name</label>
-      <input name="projectName" data-testid="projectName" />
-
-      <label for="projectDescription">Project projectDescription</label>
-      <input name="projectDescription" data-testid="projectDescription" />
-
-      <Link to="/home">
-        <button data-testid="finishButton">Finish</button>
-      </Link>
+      <ProjectForm onSubmit={onSubmit} />
     </Modal>
   );
 };
 
-export default CreateProject;
+export default connect(null, { addProject })(CreateProject);
