@@ -9,6 +9,6 @@ export const fetchProjects = () => async dispatch => {
 };
 
 export const addProject = (formValues) => async dispatch => {
-  const response = await api.post('/new_project', formValues);
+  const response = await api.post('/projects', formValues);
   dispatch({ type: ADD_PROJECT, payload: response.data });
 };

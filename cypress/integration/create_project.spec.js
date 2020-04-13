@@ -1,4 +1,8 @@
 describe('Create new project', () => {
+  beforeEach(() => {
+    cy.resetDb();
+  });
+
   it('Opens a modal for adding new project', () => {
     cy.visit('http://localhost:3000');
 
@@ -29,6 +33,9 @@ describe('Create new project', () => {
       .should('not.exist');
 
     cy.get('[data-testid="projectList"] a')
-      .should('have.length', 4);
+      .should('have.length', 1);
+    
+    cy.get('[data-testid="projectList"] a')
+      .contains('testeproject');
   });
 });

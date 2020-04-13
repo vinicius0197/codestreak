@@ -52,7 +52,7 @@ describe('<CreateProject />', () => {
     );
     fireEvent.click(getByTestId('finishButton'));
 
-    expect(mockAxios.post).toHaveBeenCalledWith('/new_project', newProject);
+    expect(mockAxios.post).toHaveBeenCalledWith('/projects', newProject);
     expect(mockAxios.post).toHaveBeenCalledTimes(1);
   });
 });

@@ -2,18 +2,19 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import history from '../../history';
 
+const renderInput = (formProps) => {
+  return(
+    <div>
+      <label> {formProps.label} </label>
+      <input data-testid={formProps.dataTestid} {...formProps.input} />
+    </div>
+  );
+};
+
 const ProjectForm = props => {
   const onSubmit = formValues => {
     props.onSubmit(formValues);
-  };
-
-  const renderInput = (formProps) => {
-    return(
-      <div>
-        <label> {formProps.label} </label>
-        <input data-testid={formProps.dataTestid} {...formProps.input} />
-      </div>
-    );
+    redirect();
   };
 
   const redirect = () => {
@@ -25,7 +26,7 @@ const ProjectForm = props => {
       <Field name="projectName" dataTestid="projectName" component={renderInput} label="Project Name" />
       <Field name="projectDescription" dataTestid="projectDescription" component={renderInput} label="Project Description"/>
 
-      <button onClick={redirect} data-testid="finishButton">Finish</button>
+      <button data-testid="finishButton">Finish</button>
     </form>
   );
 };

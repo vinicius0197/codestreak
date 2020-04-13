@@ -1,10 +1,9 @@
 {
   "projects": [
     {
-      "projectName": "Project #1"
-    },
-    {
-      "projectName": "Project #2"
+      "projectName": "testeproject",
+      "projectDescription": "test description",
+      "id": 1
     }
   ]
 }
