@@ -15,4 +15,4 @@ install:
   - yarn install --frozen-lockfile
 script:
   - yarn run dev
-  - $(yarn bin)/cypress run
+  - yarn e2e

@@ -25,7 +25,9 @@
     "eject": "react-scripts eject",
     "serve": "json-server db.json --port 3001",
     "cypress:open": "cypress open",
-    "dev": "concurrently \"yarn start\" \"yarn run serve\""
+    "cypress:run": "cypress run",
+    "dev": "concurrently \"yarn start\" \"yarn run serve\"",
+    "e2e": "concurrently \"yarn run dev\" \"cypress run\" --kill-others --success"
   },
   "eslintConfig": {
     "extends": "react-app"
