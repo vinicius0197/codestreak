@@ -9,6 +9,8 @@ cache:
   yarn: true
   directories:
     - ~/.cache
+before_install:
+  - npm install -g json-server
 install:
   - yarn install --frozen-lockfile
 script:
