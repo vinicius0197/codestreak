@@ -6,11 +6,11 @@ addons:
     packages:
       - libgconf-2-4
 cache:
-  npm: true
+  yarn: true
   directories:
     - ~/.cache
 install:
-  - npm ci
+  - yarn ci
 script:
-  - $(npm bin)/run dev
-  - $(npm bin)/cypress run --record
+  - $(yarn bin)/run dev
+  - $(yarn bin)/cypress run --record
