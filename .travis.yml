@@ -10,7 +10,7 @@ cache:
   directories:
     - ~/.cache
 install:
-  - yarn ci
+  - yarn install --frozen-lockfile
 script:
   - $(yarn bin)/run dev
   - $(yarn bin)/cypress run --record
