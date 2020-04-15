@@ -8,3 +8,14 @@ Cypress.Commands.add('resetDb', () => {
       });
     })
 });
+
+Cypress.Commands.add('visitAndSeed', () => {
+  cy.fixture('data').then(seedData => {
+    seedData.projects.map(data => {
+      cy.request('POST', 'http://localhost:3001/projects', data)
+        .then(response => {
+          console.log(response.body);
+        });
+    });
+  })
+});
