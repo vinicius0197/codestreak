@@ -27,7 +27,7 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "dev": "concurrently \"yarn start\" \"yarn run serve\"",
-    "e2e": "concurrently \"yarn run dev\" \"cypress run\" --kill-others --success"
+    "e2e": "concurrently \"yarn run dev\" \"cypress run\" --kill-others --success first"
   },
   "eslintConfig": {
     "extends": "react-app"
