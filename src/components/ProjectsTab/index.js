@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchProjects } from 'actions';
+import { fetchProjects, selectProject } from 'actions';
 
 import { Link, useRouteMatch } from "react-router-dom";
 
@@ -19,12 +19,16 @@ const ProjectsTab = props => {
     props.fetchProjects();
   }, []);
 
+  const handleSelectProject = (id) => {
+    props.selectProject(id);
+  };
+
   const renderProjects = () => {
-    if(props.projects.projects.length > 0) {
+    if(props.projects.projectList.length > 0) {
       return(
-        props.projects.projects.map(project => {
+        props.projects.projectList.map(project => {
           return(
-            <Link key={project.projectName} to={`${url}/projeto1`}>
+            <Link key={project.projectName} to={`${url}/${project.projectName}`} onClick={() => handleSelectProject(project.id)}>
             <ProjectItemContainer>
               <ProjectBullet />
               <ProjectItem data-testid="project-item">{project.projectName}</ProjectItem>
@@ -56,4 +60,4 @@ const mapStateToProps = state => {
   }
 };
 
-export default connect(mapStateToProps, { fetchProjects })(ProjectsTab);
+export default connect(mapStateToProps, { fetchProjects, selectProject })(ProjectsTab);

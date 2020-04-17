@@ -10,7 +10,7 @@ const Posts = () => {
   return(
     <PostsContainer>
       <CreatePost />
-      <PostList />
+      <PostList/>
     </PostsContainer>
   );
 };

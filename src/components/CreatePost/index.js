@@ -9,10 +9,10 @@ import {
 
 const CreatePost = () => {
   return(
-    <CreatePostContainer>
+    <CreatePostContainer data-testid="createPostWindow">
       <Heading>Create Post</Heading>
-      <TextBox placeholder="Write an update on your project..." />
-      <ShareButton>Share</ShareButton>
+      <TextBox data-testid="createPostInput" placeholder="Write an update on your project..." />
+      <ShareButton data-testid="createPostButton">Share</ShareButton>
     </CreatePostContainer>
   );
 };

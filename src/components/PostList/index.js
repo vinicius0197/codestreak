@@ -31,15 +31,15 @@ const Post = () => {
 
 const PostList = () => {
   return(
-    <div>
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+    <div data-testid="postsContainer">
+      <Post data-testid="singlePost"/>
+      <Post data-testid="singlePost"/>
+      <Post data-testid="singlePost"/>
+      <Post data-testid="singlePost"/>
+      <Post data-testid="singlePost"/>
+      <Post data-testid="singlePost"/>
+      <Post data-testid="singlePost"/>
+      <Post data-testid="singlePost"/>
     </div>
   );
 };
