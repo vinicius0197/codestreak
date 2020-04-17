@@ -1,4 +1,4 @@
-import { FETCH_PROJECTS, ADD_PROJECT, SELECT_PROJECT, FETCH_POSTS } from 'actions/types';
+import { FETCH_PROJECTS, ADD_PROJECT, SELECT_PROJECT, FETCH_POSTS, ADD_POST } from 'actions/types';
 
 const initialState = {
   projectList: [],
@@ -15,6 +15,8 @@ export default function(state = initialState, action) {
       return { ...state, selectedProject: action.payload }
     case FETCH_POSTS:
       return { ...state, posts: action.payload.posts }
+    case ADD_POST:
+      return { ...state, posts: [...state.posts, action.payload] }
     default:
       return state;
   }

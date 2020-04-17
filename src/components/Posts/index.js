@@ -17,7 +17,7 @@ const Posts = props => {
 
   return(
     <PostsContainer>
-      <CreatePost />
+      <CreatePost selectedProject={props.selectedProject} />
       <PostList/>
     </PostsContainer>
   );

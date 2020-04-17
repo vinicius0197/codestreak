@@ -1,9 +1,9 @@
 import mockAxios from 'apis';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { FETCH_PROJECTS, ADD_PROJECT, SELECT_PROJECT, FETCH_POSTS } from 'actions/types';
+import { FETCH_PROJECTS, ADD_PROJECT, SELECT_PROJECT, FETCH_POSTS, ADD_POST } from 'actions/types';
 
-import { fetchProjects, addProject, selectProject, fetchPosts } from 'actions/index';
+import { fetchProjects, addProject, selectProject, fetchPosts, addPost } from 'actions/index';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -72,6 +72,28 @@ describe('Action Creators', () => {
     return store.dispatch(fetchPosts(projectedId)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
+  });
 
+  it('should dispatch action to create a new post', () => {
+    const postData = {
+      postDate: "Wed Mar 25 2020 11:01:01 GMT-0300 (Brasilia Standard Time)",
+      postTitle: "lorem ipsum",
+      postContent: "lorem ipsum",
+      projectId: 1
+    };
+
+    mockAxios.post.mockResolvedValueOnce({
+      data: postData
+    });
+
+    const expectedActions = [
+      { type: ADD_POST, payload: postData }
+    ];
+
+    const store = mockStore({ projects: [] });
+
+    return store.dispatch(addPost(postData)).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
   });
 });
