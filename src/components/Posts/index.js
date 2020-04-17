@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CreatePost from '../CreatePost/';
 import PostList from '../PostList/';
+
+import { fetchPosts } from 'actions';
+
+import { connect } from 'react-redux';
 
 import {
   PostsContainer
 } from './styles';
 
-const Posts = () => {
+const Posts = props => {
+  useEffect(() => {
+    props.fetchPosts(props.selectedProject);
+  });
+
   return(
     <PostsContainer>
       <CreatePost />
@@ -15,4 +23,10 @@ const Posts = () => {
   );
 };
 
-export default Posts;
+const mapStateToProps = state => {
+  return {
+    selectedProject: state.projects.selectedProject
+  }
+};
+
+export default connect(mapStateToProps, { fetchPosts })(Posts);

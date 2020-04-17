@@ -1,6 +1,11 @@
-import { FETCH_PROJECTS, ADD_PROJECT, SELECT_PROJECT } from 'actions/types';
+import { FETCH_PROJECTS, ADD_PROJECT, SELECT_PROJECT, FETCH_POSTS } from 'actions/types';
 
-export default function(state = { projectList: [] }, action) {
+const initialState = {
+  projectList: [],
+  selectedProject: 1
+};
+
+export default function(state = initialState, action) {
   switch(action.type) {
     case FETCH_PROJECTS:
       return { ...state, projectList: action.payload }
@@ -8,6 +13,8 @@ export default function(state = { projectList: [] }, action) {
       return { ...state, projectList: [...state.projectList, action.payload] }
     case SELECT_PROJECT:
       return { ...state, selectedProject: action.payload }
+    case FETCH_POSTS:
+      return { ...state, posts: action.payload.posts }
     default:
       return state;
   }

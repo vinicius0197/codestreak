@@ -1,3 +1,4 @@
 export const ADD_PROJECT = 'ADD_PROJECT';
 export const FETCH_PROJECTS = 'FETCH_PROJECTS_REQUEST';
 export const SELECT_PROJECT = 'SELECT_PROJECT';
+export const FETCH_POSTS = 'FETCH_POSTS';

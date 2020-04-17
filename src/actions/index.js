@@ -1,7 +1,7 @@
 // import axios from 'axios';
 import api from 'apis';
 
-import { FETCH_PROJECTS, ADD_PROJECT, SELECT_PROJECT } from 'actions/types';
+import { FETCH_PROJECTS, ADD_PROJECT, SELECT_PROJECT, FETCH_POSTS } from 'actions/types';
 
 export const fetchProjects = () => async dispatch => {
   const response = await api.get('/projects');
@@ -18,4 +18,9 @@ export const selectProject = id => {
     type: SELECT_PROJECT,
     payload: id
   }
+}
+
+export const fetchPosts = projectId => async dispatch => {
+  const response = await api.get(`/projects/${projectId}`);
+  dispatch({ type: FETCH_POSTS, payload: response.data });
 }

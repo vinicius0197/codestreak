@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import {
   PostContainer,
@@ -11,14 +12,14 @@ import {
   SendIcon
 } from './styles';
 
-const Post = () => {
+const Post = ({ postData }) => {
+  debugger;
   return(
-    <PostContainer>
-      <PostDate>December 24, 2019</PostDate>
-      <PostTitle>Improved styling on navbar and added a few links</PostTitle>
+    <PostContainer data-testid="singlePost">
+      <PostDate>{postData.postDate}</PostDate>
+      <PostTitle>{postData.postTitle}</PostTitle>
       <PostContent>
-        Hurried day today! I was able to find some time later in the day and take a look at that navbar that was bothering me. Lots of progress there! Also, I’ve added some new links in the homepage.
-        Will take a better look at it tomorrow.
+        {postData.postContent}
       </PostContent>
       <CommentContainer>
         <CommentBox placeholder="Write a comment" />
@@ -29,19 +30,30 @@ const Post = () => {
   );
 };
 
-const PostList = () => {
+const PostList = props => {
+  const renderPosts = () => {
+    if(props.posts) {
+      return(
+        props.posts.map(post => {
+          return <Post key={post.id} postData={post} />;
+        })
+      );
+    } else {
+      return 'Loading...';
+    }
+  };
+
   return(
     <div data-testid="postsContainer">
-      <Post data-testid="singlePost"/>
-      <Post data-testid="singlePost"/>
-      <Post data-testid="singlePost"/>
-      <Post data-testid="singlePost"/>
-      <Post data-testid="singlePost"/>
-      <Post data-testid="singlePost"/>
-      <Post data-testid="singlePost"/>
-      <Post data-testid="singlePost"/>
+      { renderPosts() }
     </div>
   );
 };
 
-export default PostList;
+const mapStateToProps = state => {
+  return {
+    posts: state.projects.posts
+  }
+};
+
+export default connect(mapStateToProps)(PostList);

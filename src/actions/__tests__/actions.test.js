@@ -1,9 +1,9 @@
 import mockAxios from 'apis';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { FETCH_PROJECTS, ADD_PROJECT, SELECT_PROJECT } from 'actions/types';
+import { FETCH_PROJECTS, ADD_PROJECT, SELECT_PROJECT, FETCH_POSTS } from 'actions/types';
 
-import { fetchProjects, addProject, selectProject } from 'actions/index';
+import { fetchProjects, addProject, selectProject, fetchPosts } from 'actions/index';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -48,5 +48,30 @@ describe('Action Creators', () => {
     };
 
     expect(selectProject(selectedProjectId)).toEqual(expectedAction);
+  });
+
+  it('should fetch a list of posts for the selected project', () => {
+    const projectedId = 1;
+    const fetchedPosts = {
+      posts: [
+        { id: 1, postDate: 'Wed Mar 25 2020', postTitle: 'example title', postContent: 'lorem ipsum' },
+        { id: 2, postDate: 'Wed Mar 25 2020', postTitle: 'example title', postContent: 'lorem ipsum' }
+      ]
+    };
+
+    mockAxios.get.mockResolvedValueOnce({
+      data: fetchedPosts
+    });
+
+    const expectedActions = [
+      { type: FETCH_POSTS, payload: fetchedPosts }
+    ];
+
+    const store = mockStore({ projects: [] });
+
+    return store.dispatch(fetchPosts(projectedId)).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+
   });
 });
