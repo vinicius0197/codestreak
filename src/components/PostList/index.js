@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import ReactMarkdown from 'react-markdown';
 
 import {
   PostContainer,
   PostDate,
-  PostTitle,
   PostContent,
   CommentContainer,
   CommentBox,
@@ -13,13 +13,13 @@ import {
 } from './styles';
 
 const Post = ({ postData }) => {
-  debugger;
   return(
     <PostContainer data-testid="singlePost">
       <PostDate>{postData.postDate}</PostDate>
-      <PostTitle>{postData.postTitle}</PostTitle>
       <PostContent>
-        {postData.postContent}
+        <ReactMarkdown
+          source={postData.postContent}
+        />
       </PostContent>
       <CommentContainer>
         <CommentBox placeholder="Write a comment" />

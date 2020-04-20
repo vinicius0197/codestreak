@@ -18,8 +18,8 @@ describe('<Posts />', () => {
     mockAxios.get.mockResolvedValueOnce({
       data: {
         posts: [
-          { id: 1, postDate: 'Wed Mar 25 2020', postTitle: 'example title', postContent: 'lorem ipsum' },
-          { id: 2, postDate: 'Wed Mar 25 2020', postTitle: 'example title', postContent: 'lorem ipsum' }
+          { id: 1, postDate: 'Wed Mar 25 2020', postContent: 'lorem ipsum' },
+          { id: 2, postDate: 'Wed Mar 25 2020', postContent: 'lorem ipsum' }
         ]
       }
     });

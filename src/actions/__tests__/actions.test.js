@@ -54,8 +54,8 @@ describe('Action Creators', () => {
     const projectedId = 1;
     const fetchedPosts = {
       posts: [
-        { id: 1, postDate: 'Wed Mar 25 2020', postTitle: 'example title', postContent: 'lorem ipsum' },
-        { id: 2, postDate: 'Wed Mar 25 2020', postTitle: 'example title', postContent: 'lorem ipsum' }
+        { id: 1, postDate: 'Wed Mar 25 2020', postContent: 'lorem ipsum' },
+        { id: 2, postDate: 'Wed Mar 25 2020', postContent: 'lorem ipsum' }
       ]
     };
 
@@ -77,7 +77,6 @@ describe('Action Creators', () => {
   it('should dispatch action to create a new post', () => {
     const postData = {
       postDate: "Wed Mar 25 2020 11:01:01 GMT-0300 (Brasilia Standard Time)",
-      postTitle: "lorem ipsum",
       postContent: "lorem ipsum",
       projectId: 1
     };

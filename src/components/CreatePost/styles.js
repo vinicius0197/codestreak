@@ -1,11 +1,13 @@
 import styled from 'styled-components';
+import TextareaAutosize from 'react-textarea-autosize';
 
 export const CreatePostContainer = styled.div`
   margin: 2.2rem;
   background: #FFFFFF;
   border-radius: 22px;
-  height: 142px;
+  height: auto;
   width: 40rem;
+  padding-bottom: 1rem;
 `;
 
 export const Heading = styled.div`
@@ -21,11 +23,10 @@ export const Heading = styled.div`
   color: #2F2F2F;
 `;
 
-export const TextBox = styled.textarea`
+export const TextBox = styled(TextareaAutosize)`
   margin-top: 1.2rem;
   margin-left: 2rem;
-  width: 80%;
-  height: 20px;
+  width: 90%;
   font-family: Open Sans;
   font-style: normal;
   font-weight: 400;
@@ -34,6 +35,7 @@ export const TextBox = styled.textarea`
   color: #2F2F2F;
   border: none; 
   resize: none;
+  outline: none;
 `;
 
 export const ShareButton = styled.button`

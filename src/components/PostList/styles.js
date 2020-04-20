@@ -5,13 +5,14 @@ import { ReactComponent as SendImage } from '../../assets/send.svg';
 export const PostContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 220px;
+  height: auto;
   width: 40rem;
   margin-left: 2.2rem;
   margin-bottom: 2.2rem;
   background: #FFFFFF;
   border-radius: 22px;
   font-family: Open Sans;
+  padding-bottom: 1rem;
 `;
 
 export const PostDate = styled.time`
@@ -25,23 +26,11 @@ export const PostDate = styled.time`
   color: #BBC6D1;
 `;
 
-export const PostTitle = styled.h1`
-  font-family: Source Sans Pro;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 23px;
-  color: #2F2F2F;
-  margin-left: 22px;
-  margin-top: 9px;
-`;
-
 export const PostContent = styled.p`
   font-family: Source Sans Pro;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
-  line-height: 16px;
+  font-size: 16px;
   color: #373D3F;
   margin-left: 22px;
   margin-right: 30px;
