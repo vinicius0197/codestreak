@@ -15,8 +15,9 @@ const CreatePost = props => {
 
   const handlePostSubmission = e => {
     e.preventDefault();
+    let currentDate = new Date();
     const postData = {
-      postDate: new Date(),
+      postDate: currentDate.toDateString(),
       postContent: textAreaEl.current.value,
       projectId: props.selectedProject
     };
@@ -29,6 +30,19 @@ const CreatePost = props => {
     setPostContent(e.target.value);
   };
 
+  const handleKeyDown = e => {
+    if(e.keyCode === 9) { // handles 'tab' character
+      e.preventDefault();
+      let val = textAreaEl.current.value;
+      var start = textAreaEl.current.selectionStart;
+      var end = textAreaEl.current.selectionEnd;
+
+      textAreaEl.current.value = val.substring(0, start) + '\t' + val.substring(end);
+
+      textAreaEl.current.selectionStart = textAreaEl.current.selectionEnd = start + 1;
+    }
+  };
+
   return(
     <CreatePostContainer data-testid="createPostWindow">
       <form>
@@ -37,6 +51,7 @@ const CreatePost = props => {
           value={postContent}
           onChange={e => onChangeContent(e)}
           inputRef={textAreaEl}
+          onKeyDown={e => handleKeyDown(e)}
           data-testid="createPostInput"
           placeholder="Write an update on your project..."
         />

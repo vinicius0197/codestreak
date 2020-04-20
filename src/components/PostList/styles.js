@@ -26,7 +26,7 @@ export const PostDate = styled.time`
   color: #BBC6D1;
 `;
 
-export const PostContent = styled.p`
+export const PostContent = styled.div`
   font-family: Source Sans Pro;
   font-style: normal;
   font-weight: normal;

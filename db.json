@@ -9,160 +9,38 @@
       "id": 2,
       "projectName": "Test project",
       "projectDescription": "test description"
-    },
-    {
-      "projectName": "testeee",
-      "projectDescription": "teste",
-      "id": 3
-    },
-    {
-      "projectName": "my project",
-      "projectDescription": "terer",
-      "id": 4
     }
   ],
   "posts": [
     {
-      "postDate": "2020-04-17T19:13:48.743Z",
-      "postTitle": null,
-      "postContent": "this is an example post",
-      "id": 1
-    },
-    {
-      "postDate": "2020-04-17T19:15:07.963Z",
-      "postTitle": null,
-      "postContent": "teste",
-      "id": 2
-    },
-    {
-      "postDate": "2020-04-17T19:17:02.163Z",
-      "postTitle": null,
-      "postContent": "teste",
+      "id": 1,
+      "postDate": "Wed Mar 25 2020 11:01:01 GMT-0300 (Brasilia Standard Time)",
       "projectId": 1,
-      "id": 3
+      "postContent": "Hurried day today! I was able to find some time later in the day and take a look at that navbar that was bothering me. Lots of progress there! Also, I’ve added some new links in the homepage. Will take a better look at it tomorrow."
     },
     {
-      "postDate": "2020-04-17T19:17:06.850Z",
-      "postTitle": null,
-      "postContent": "teste 2",
+      "id": 2,
+      "postDate": "Wed Mar 24 2020 11:01:01 GMT-0300 (Brasilia Standard Time)",
+      "projectId": 1,
+      "postContent": "Hurried day today! I was able to find some time later in the day and take a look at that navbar that was bothering me. Lots of progress there! Also, I’ve added some new links in the homepage. Will take a better look at it tomorrow."
+    },
+    {
+      "id": 3,
+      "postDate": "Wed Mar 23 2020 11:01:01 GMT-0300 (Brasilia Standard Time)",
       "projectId": 2,
-      "id": 4
+      "postContent": "Hurried day today! I was able to find some time later in the day and take a look at that navbar that was bothering me. Lots of progress there! Also, I’ve added some new links in the homepage. Will take a better look at it tomorrow."
     },
     {
-      "postDate": "2020-04-17T19:17:12.026Z",
-      "postTitle": null,
-      "postContent": "dferwer",
+      "id": 4,
+      "postDate": "Wed Mar 22 2020 11:01:01 GMT-0300 (Brasilia Standard Time)",
       "projectId": 2,
-      "id": 5
+      "postContent": "Hurried day today! I was able to find some time later in the day and take a look at that navbar that was bothering me. Lots of progress there! Also, I’ve added some new links in the homepage. Will take a better look at it tomorrow."
     },
     {
-      "postDate": "2020-04-20T16:57:46.800Z",
-      "postTitle": null,
-      "postContent": "teste",
-      "projectId": 3,
-      "id": 6
-    },
-    {
-      "postDate": "2020-04-20T17:09:16.802Z",
-      "postTitle": null,
-      "postContent": "##Titutlo",
+      "id": 5,
+      "postDate": "Wed Mar 24 2020 11:01:01 GMT-0300 (Brasilia Standard Time)",
       "projectId": 2,
-      "id": 7
-    },
-    {
-      "postDate": "2020-04-20T17:09:36.480Z",
-      "postTitle": null,
-      "postContent": "oi",
-      "projectId": 2,
-      "id": 8
-    },
-    {
-      "postDate": "2020-04-20T17:11:01.208Z",
-      "postTitle": null,
-      "postContent": "# teste",
-      "projectId": 1,
-      "id": 9
-    },
-    {
-      "postDate": "2020-04-20T17:11:06.256Z",
-      "postTitle": null,
-      "postContent": "##teste",
-      "projectId": 1,
-      "id": 10
-    },
-    {
-      "postDate": "2020-04-20T17:11:14.810Z",
-      "postTitle": null,
-      "postContent": "`code`",
-      "projectId": 1,
-      "id": 11
-    },
-    {
-      "postDate": "2020-04-20T17:12:41.952Z",
-      "postTitle": null,
-      "postContent": "```js\nvar React = require('react');\nvar Markdown = require('react-markdown');\n\nReact.render(\n  <Markdown source=\"# Your markdown here\" />,\n  document.getElementById('content')\n);\n```",
-      "projectId": 1,
-      "id": 12
-    },
-    {
-      "postDate": "2020-04-20T17:46:49.815Z",
-      "projectId": 1,
-      "id": 13
-    },
-    {
-      "postDate": "2020-04-20T17:46:57.561Z",
-      "projectId": 1,
-      "id": 14
-    },
-    {
-      "postDate": "2020-04-20T17:47:24.265Z",
-      "projectId": 1,
-      "id": 15
-    },
-    {
-      "postDate": "2020-04-20T17:47:36.706Z",
-      "projectId": 3,
-      "id": 16
-    },
-    {
-      "postDate": "2020-04-20T17:48:44.624Z",
-      "projectId": 3,
-      "id": 17
-    },
-    {
-      "postDate": "2020-04-20T17:51:48.159Z",
-      "projectId": 1,
-      "id": 18
-    },
-    {
-      "postDate": "2020-04-20T17:52:18.594Z",
-      "postContent": "teste",
-      "projectId": 1,
-      "id": 19
-    },
-    {
-      "postDate": "2020-04-20T17:52:45.330Z",
-      "postContent": "## This is a title\n\nThis is a list of posts:\n- first post\n- first post",
-      "projectId": 3,
-      "id": 20
-    },
-    {
-      "postDate": "2020-04-20T17:54:57.241Z",
-      "postContent": "teste",
-      "projectId": 1,
-      "id": 21
-    },
-    {
-      "postDate": "2020-04-20T17:55:29.496Z",
-      "postContent": "# Example of markdown post\n\nList of topics:\n\n- topic 1\n- topic 2",
-      "projectId": 4,
-      "id": 22
-    },
-    {
-      "postDate": "2020-04-20T17:59:35.456Z",
-      "postContent": "### This is an example of a code block:\n\n```\n   alert('do something');\n```",
-      "projectId": 4,
-      "id": 23
+      "postContent": "Hurried day today! I was able to find some time later in the day and take a look at that navbar that was bothering me. Lots of progress there! Also, I’ve added some new links in the homepage. Will take a better look at it tomorrow."
     }
   ]
 }

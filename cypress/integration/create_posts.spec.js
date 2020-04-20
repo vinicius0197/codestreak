@@ -21,6 +21,6 @@ describe('Create new posts', () => {
 
     cy.get('[data-testid="postsContainer"]')
       .children()
-      .should('have.length', 1);
+      .should('have.length', 3);
   });
 });
