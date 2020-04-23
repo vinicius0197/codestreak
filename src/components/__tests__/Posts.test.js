@@ -16,6 +16,15 @@ describe('<Posts />', () => {
 
   it('fetches posts from API when rendered', async () => {
     mockAxios.get.mockResolvedValueOnce({
+      data: [{
+        id: 1,
+        projectName: "CodeStreaks",
+        hash: "xrXr82336rrS3Pqh0X2FcUdfer",
+        projectDescription: "test description"
+      }]
+    });
+
+    mockAxios.get.mockResolvedValueOnce({
       data: {
         posts: [
           { id: 1, postDate: 'Wed Mar 25 2020', postContent: 'lorem ipsum' },

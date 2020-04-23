@@ -28,12 +28,26 @@ export const ProjectItemContainer = styled.button`
   }
 `;
 
+export const SelectedProjectContainer = styled.button`
+  display: flex;
+  background-color: inherit;
+  padding: 0 0.8rem;
+  margin: 0.9rem 1rem;
+  height: 3rem;
+  width: 11rem;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  background: #F3F5FE;
+  border-radius: 18px;
+`;
+
 export const ProjectBullet = styled.div`
   width: 10px;
   height: 10px;
   margin-right: 0.4rem;
   border-radius: 50%;
-  background-color: #BBC6D1;
+  background-color: ${props => props.selected ? "#1F6FF8" : "#BBC6D1" };
 
   transition: 0.3s;
 
@@ -47,7 +61,7 @@ export const ProjectItem = styled.div`
   font-weight: 600;
   line-height: 18px;
   letter-spacing: 0.015em;
-  color: #BBC6D1;
+  color: ${props => props.selected ? "#1F6FF8" : "#BBC6D1" };
 
   transition: 0.3s;
 

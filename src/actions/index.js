@@ -20,7 +20,14 @@ export const selectProject = id => {
   }
 };
 
-export const fetchPosts = projectId => async dispatch => {
+export const fetchPosts = projectHash=> async dispatch => {
+  if(projectHash === 1) { // projectHash === 1 is the default value for loading the first project available 
+    const response = await api.get('/projects/1?_embed=posts');
+    dispatch({ type: FETCH_POSTS, payload: response.data });
+    return;
+  }
+  const projectResponse = await api.get(`/projects/?hash=${projectHash}`);
+  const projectId = projectResponse.data[0].id;
   const response = await api.get(`/projects/${projectId}?_embed=posts`);
   dispatch({ type: FETCH_POSTS, payload: response.data });
 };

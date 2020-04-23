@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+
 import CreatePost from '../CreatePost/';
 import PostList from '../PostList/';
 
@@ -11,6 +12,7 @@ import {
 } from './styles';
 
 const Posts = props => {
+  // alert(props.projectHash);
   useEffect(() => {
     props.fetchPosts(props.selectedProject);
   });

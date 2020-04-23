@@ -52,12 +52,25 @@ describe('Action Creators', () => {
 
   it('should fetch a list of posts for the selected project', () => {
     const projectedId = 1;
+    const fetchedProjects = [
+      {
+        id: 1,
+        projectName: "CodeStreaks",
+        hash: "xrXr82336rrS3Pqh0X2FcUdfer",
+        projectDescription: "test description"
+      },
+    ];
+
     const fetchedPosts = {
       posts: [
         { id: 1, postDate: 'Wed Mar 25 2020', postContent: 'lorem ipsum' },
         { id: 2, postDate: 'Wed Mar 25 2020', postContent: 'lorem ipsum' }
       ]
     };
+
+    mockAxios.get.mockResolvedValueOnce({
+      data: fetchedProjects
+    });
 
     mockAxios.get.mockResolvedValueOnce({
       data: fetchedPosts

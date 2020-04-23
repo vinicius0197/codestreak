@@ -17,10 +17,6 @@ describe('<CreateProject />', () => {
   afterEach(cleanup);
 
   it('creates a new project', () => {
-    const newProject = {
-      projectName: 'project new',
-      projectDescription: 'project description'
-    };
     const history = createMemoryHistory();
     const route = '/statistics';
     history.push(route);
@@ -52,7 +48,6 @@ describe('<CreateProject />', () => {
     );
     fireEvent.click(getByTestId('finishButton'));
 
-    expect(mockAxios.post).toHaveBeenCalledWith('/projects', newProject);
     expect(mockAxios.post).toHaveBeenCalledTimes(1);
   });
 });

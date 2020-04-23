@@ -12,13 +12,15 @@ import CreateProject from 'components/CreateProject';
 import {Route} from 'react-router-dom';
 
 const ContentArea = props => {
+  var projectHash = /[^/]*$/.exec(props.location.pathname)[0];
+
   return(
     <React.Fragment>
       <ProjectsTab />
       <Container>
         <ContentBackground>
           <ProjectArea>
-            <Posts />
+            <Posts projectHash={projectHash} />
             <CalendarView />
           </ProjectArea>
         </ContentBackground>

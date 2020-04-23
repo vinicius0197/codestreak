@@ -9,7 +9,8 @@ import {
   ProjectItemContainer,
   ProjectBullet,
   ProjectItem,
-  NewProjectButton
+  NewProjectButton,
+  SelectedProjectContainer
 } from './styles';
 
 const ProjectsTab = props => {
@@ -27,12 +28,20 @@ const ProjectsTab = props => {
     if(props.projects.projectList.length > 0) {
       return(
         props.projects.projectList.map(project => {
+          const isSelected = project.hash === props.selectedProject;
           return(
-            <Link key={project.projectName} to={`${url}/${project.projectName}`} onClick={() => handleSelectProject(project.id)}>
-            <ProjectItemContainer>
-              <ProjectBullet />
-              <ProjectItem data-testid="project-item">{project.projectName}</ProjectItem>
-            </ProjectItemContainer>
+            <Link key={project.projectName} to={`${url}/${project.hash}`} onClick={() => handleSelectProject(project.hash)}>
+            { isSelected ?
+              <SelectedProjectContainer>
+                <ProjectBullet selected />
+                <ProjectItem selected data-testid="project-item">{project.projectName}</ProjectItem>
+              </SelectedProjectContainer>
+              :
+              <ProjectItemContainer>
+                <ProjectBullet />
+                <ProjectItem data-testid="project-item">{project.projectName}</ProjectItem>
+              </ProjectItemContainer>
+            }
           </Link>
           );
         })
@@ -56,7 +65,8 @@ const ProjectsTab = props => {
 
 const mapStateToProps = state => {
   return {
-    projects: state.projects
+    projects: state.projects,
+    selectedProject: state.projects.selectedProject
   }
 };
 

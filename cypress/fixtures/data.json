@@ -3,11 +3,13 @@
     {
       "id": 1,
       "projectName": "CodeStreaks",
+      "hash": "xrXr82336rrS3Pqh0X2FcUdfer",
       "projectDescription": "test description"
     },
     {
       "id": 2,
       "projectName": "Test project",
+      "hash": "aqXB6trS3232Pqh0X2FcUdsdse",
       "projectDescription": "test description"
     }
   ],
