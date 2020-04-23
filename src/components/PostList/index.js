@@ -33,8 +33,9 @@ const Post = ({ postData }) => {
 const PostList = props => {
   const renderPosts = () => {
     if(props.posts) {
+      const sortedPosts = props.posts.slice().sort((a,b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
       return(
-        props.posts.map(post => {
+        sortedPosts.map(post => {
           return <Post key={post.id} postData={post} />;
         })
       );

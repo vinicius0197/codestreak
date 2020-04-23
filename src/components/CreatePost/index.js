@@ -18,6 +18,7 @@ const CreatePost = props => {
     let currentDate = new Date();
     const postData = {
       postDate: currentDate.toDateString(),
+      createdAt: currentDate,
       postContent: textAreaEl.current.value,
       projectId: props.selectedProject
     };
