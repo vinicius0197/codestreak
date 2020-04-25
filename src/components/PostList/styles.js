@@ -6,7 +6,7 @@ export const PostContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: auto;
-  width: 40rem;
+  width: 90%;
   margin-left: 2.2rem;
   margin-bottom: 2.2rem;
   background: #FFFFFF;

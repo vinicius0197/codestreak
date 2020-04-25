@@ -12,7 +12,6 @@ import {
 } from './styles';
 
 const Posts = props => {
-  // alert(props.projectHash);
   useEffect(() => {
     props.fetchPosts(props.selectedProject);
   });

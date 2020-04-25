@@ -6,7 +6,7 @@ export const CreatePostContainer = styled.div`
   background: #FFFFFF;
   border-radius: 22px;
   height: auto;
-  width: 40rem;
+  width: 90%;
   padding-bottom: 1rem;
 `;
 

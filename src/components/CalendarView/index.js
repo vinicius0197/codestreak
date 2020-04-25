@@ -1,10 +1,14 @@
 import React from 'react';
+import {
+  CalendarContainer,
+  CalendarBackground
+} from './styles';
 
 const CalendarView = () => {
   return(
-    <div>
-      Calendar View
-    </div>
+    <CalendarContainer>
+      <CalendarBackground />
+    </CalendarContainer>
   );
 };
 
