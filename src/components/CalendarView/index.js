@@ -1,4 +1,6 @@
 import React from 'react';
+
+import Calendar from 'components/Calendar';
 import {
   CalendarContainer,
   CalendarBackground
@@ -7,7 +9,9 @@ import {
 const CalendarView = () => {
   return(
     <CalendarContainer>
-      <CalendarBackground />
+      <CalendarBackground>
+        <Calendar />
+      </CalendarBackground>
     </CalendarContainer>
   );
 };
