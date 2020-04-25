@@ -12,4 +12,5 @@ export const CalendarBackground = styled.div`
   height: 100%;
   background-color: #FFFFFF;
   border-radius: 22px;
+  padding: 2.2rem;
 `;
